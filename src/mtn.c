@@ -1047,8 +1047,8 @@ void dump_stream(AVStream * p)
 {
     av_log(NULL, AV_LOG_VERBOSE, "***dump_stream, time_base: %d / %d\n", 
         p->time_base.num, p->time_base.den);
-    av_log(NULL, AV_LOG_VERBOSE, "cur_dts tb?: %"PRId64", start_time tb: %"PRId64", duration tb: %"PRId64", nb_frames: %"PRId64"\n",
-        p->internal->cur_dts, p->start_time, p->duration, p->nb_frames);
+    av_log(NULL, AV_LOG_VERBOSE, "cur_dts tb?: %s, start_time tb: %"PRId64", duration tb: %"PRId64", nb_frames: %"PRId64"\n",
+        av_ts2str(p->internal->cur_dts), p->start_time, p->duration, p->nb_frames);
     // get funny results here. use format_context's.
     av_log(NULL, AV_LOG_VERBOSE, "cur_dts s?: %.2f, start_time s: %.2f, duration s: %.2f\n",
         p->internal->cur_dts * av_q2d(p->time_base), p->start_time * av_q2d(p->time_base), 
